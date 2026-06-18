@@ -29,7 +29,7 @@ try {
 
   let proc =
     $`pnpm exec eslint --fix --quiet --color --no-error-on-unmatched-pattern --config ./eslint.config.mjs --cache --cache-location ./node_modules/.cache/eslint/workspace.json --concurrency auto ${
-      filesList || "**/*.{ts,tsx,js,jsx,json,md}"
+      filesList || "**/*.{ts,tsx,js,jsx,json}"
     }`.timeout(`${30 * 60}s`);
   proc.stdout.on("data", data => {
     echo`${data}`;
